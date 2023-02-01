@@ -1,10 +1,6 @@
+import { useState } from "react";
 import "./Frcst.css"
-import "./Frcheader"
-import Frcheader from "./Frcheader";
-import Frccn from "./Frccn";
-import Frcdt from "./Frcdt";
-import { useEffect, useState } from "react";
-
+// import { useState }  from 'react';
 const Frcst = () => {
     /* 공공데이터포털 : 한국환경공단_에어코리아_대기오염정보
     frcstOneCn : 첫째날예보
@@ -22,7 +18,6 @@ const Frcst = () => {
     // {} 오브젝트 기호 , key로 데이터 접근
     // NoSQL : 대표적으로 json
 
-
     const items = [
         {
         "frcstFourDt":"2023-02-05",
@@ -37,86 +32,71 @@ const Frcst = () => {
         "presnatnDt":"2023-01-30"
         }
         ];
-        // console.log("아이템1",items[0]["frcstFourDt"])
-
-        let fcrdt = [ "frcstOneDt","frcstTwoDt","frcstThreeDt", "frcstFourDt"]; // 날짜 정보만 담는 배열
-        let fcrcn = ["frcstOneCn","frcstTwoCn", "frcstThreeCn",  "frcstFourCn"]; // 예보 정보를 담는 배열
-
-        // 예보 일자별 배열 추출
-        // let dt = fcrdt.map((v) => v.includes('One')? 1 :0);
-        fcrdt = fcrdt.map((k) => items[0][k]);
-        fcrcn = fcrcn.map((k) => items[0][k]);
+        let item = items[0];
         
-        // console.log("dt = ", dt)
-        
-        // console.log(fcrdt) // key
-        // console.log(fcrcn) // value
-        
-        // 일자별 예보 오브젝트
-        // for(let [k,v] of Object.entries(fcrdt))  // 오브젝트 엔트리
-        // {
-        //     console.log("k = ", k, "v = ", v , fcrcn[k] )
-        // }
-
-        let sum = new Object();
-        for(let [k,v] of fcrdt.entries())  // 배열.엔트리
-        {
-            sum[v] = fcrcn[k]
-            // console.log("k = ", k, "v = ", v, fcrcn[k])
-        }
-        console.log("sum" ,sum)
-        
-        // let sum = new Object();
-        // for(let i = 0; i < fcrcn.length; i++){
-        //     sum[fcrdt[i]] = fcrcn[i] 
-        // }
-        // console.log(sum)
-        
-
-
-
-        /*내가 한 방법 .. 근데 날씨 정보가 순서대로 되지가 않음
-        let fcrdt = []; // 날짜 정보만 담는 배열
-        let fcrcn = []; // 나머지 정보를 담는 배열
-        let temp = [];
-        temp = Object.values(items[0]);
-        
-        console.log(temp);
-        for(let i of temp){
-            if(i.includes("2023")){
-                fcrdt.push(i)
-            }else{
-                fcrcn.push(i)
+        // state 변수다 값을 바꾸는 것이 함수(setInfo)
+        let [info, setInfo] = useState();
+      
+        const showInfo1 = (seldt) => {
+            
+            let infoArray;
+            let newinfoArray;
+            // setInfo(info);
+            // console.log(seldt);
+            // eslint-disable-next-line default-case
+            switch(seldt){
+                case 1: infoArray = item.frcstOneCn.split(","); break;
+                case 2: infoArray = item.frcstTwoCn.split(","); break;
+                case 3: infoArray = item.frcstThreeCn.split(","); break;
+                case 4: infoArray = item.frcstFourCn.split(","); break;
             }
-        }
-        console.log(fcrdt);
-        fcrdt.sort();
-        
-        console.log(fcrdt);
-        console.log(fcrcn);
-        */
+            // console.log(infoArray); // 배열이다.
+            // infoArray = infoArray.map((ia)=> <li key={ia + seldt} className="lired">{ia}</li>);
+            // infoArray = infoArray.map((v)=> v.includes("높음")?  // map 함수를 한줄만 써야 하므로 3항연산자 사용
+            // <li key={v + seldt} className="lired">
+            //     <span>{v.split(":")[0]}</span>
+            //     <span>{v.split(":")[1]}</span>
+            //     </li> :
+            // <li key={v + seldt} className="liblack">{v}</li>
+            // );
 
-        let [cn, setcn] = useState(sum["2023-02-02"]);
-        let [dt, setdt] = useState("2023-02-02");
-        // setcn();
-
-
-        // useEffect(() => {
-        //     console.log("userEffect" , sum[dt]);
-        //     sum[dt] && setcn(sum[dt])
-        // }, [dt]);
-
+            // console.log()
+            infoArray = infoArray.map((v)=>  
+            <li key={v + seldt}> <span>{v.split(":")[0]}</span> (0.
+                {
+                v.includes("높음") ?
+                <span className="lired">{v.split(":")[1]}</span> :
+                <span >{v.split(":")[1]}</span>
+                }
+                )
+                </li> 
+            );
+            console.log(infoArray); // 배열이다.
+            setInfo(infoArray);
+        };
         
     return (
-        <div> 
-            <Frcheader />
-            <p>{dt}</p>
+        <div>
+            <div className="header">
+                <h1>미세먼지예보</h1>
+            </div>
+
             <div className="main">
-                <Frcdt dt = {fcrdt} setdt = {setdt} /> 
-                <Frccn cn = {cn}/>
+                <div className="box1">
+                    <div className="dtdiv1" onClick={() => showInfo1(1)}>{item.frcstOneDt}</div>
+                    <div className="dtdiv1"onClick={() => showInfo1(2)}>{item.frcstTwoDt}</div>
+                    <div className="dtdiv1"onClick={() => showInfo1(3)}>{item.frcstThreeDt}</div>
+                    <div className="dtdiv1"onClick={() => showInfo1(4)}>{item.frcstFourDt}</div>
+                </div>
+                <div className="box2">
+                    <div className="detail">
+                        <ul>{info}</ul>
+                        </div>
+                </div>
             </div>
         </div>
          
     ) ;
 }
+
 export default Frcst ;
