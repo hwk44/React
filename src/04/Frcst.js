@@ -35,7 +35,7 @@ const Frcst = () => {
         let item = items[0];
         
         // state 변수다 값을 바꾸는 것이 함수(setInfo)
-        let [info, setInfo] = useState("");
+        let [info, setInfo] = useState();
       
         const showInfo1 = (seldt) => {
             
