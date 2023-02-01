@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-
 const Boxmain = () => {
     const mvlist = [
         {"rnum":"1","rank":"1","rankInten":"0","rankOldAndNew":"OLD","movieCd":"20190808","movieNm":"교섭","openDt":"2023-01-18","salesAmt":"355906586","salesShare":"18.8","salesInten":"-147956429","salesChange":"-29.4","salesAcc":"12600296336","audiCnt":"36622","audiInten":"-23326","audiChange":"-38.9","audiAcc":"1234442","scrnCnt":"945","showCnt":"3700"},
@@ -14,51 +11,66 @@ const Boxmain = () => {
         {"rnum":"9","rank":"9","rankInten":"-1","rankOldAndNew":"OLD","movieCd":"20228313","movieNm":"오늘 밤, 세계에서 이 사랑이 사라진다 해도","openDt":"2022-11-30","salesAmt":"49429844","salesShare":"2.6","salesInten":"-16882910","salesChange":"-25.5","salesAcc":"10112965111","audiCnt":"4868","audiInten":"-2184","audiChange":"-31","audiAcc":"980655","scrnCnt":"241","showCnt":"355"},
         {"rnum":"10","rank":"10","rankInten":"0","rankOldAndNew":"OLD","movieCd":"20229518","movieNm":"천룡팔부: 교봉전","openDt":"2023-01-25","salesAmt":"15848197","salesShare":"0.8","salesInten":"-3804460","salesChange":"-19.4","salesAcc":"48516954","audiCnt":"1754","audiInten":"-482","audiChange":"-21.6","audiAcc":"5202","scrnCnt":"259","showCnt":"393"}
     ];
-    let [dspmv, setDspmv] = useState({});
 
-    const handleDivClick = (selmv) => {
-        setDspmv({...selmv});
-        console.log(dspmv);
+    
+    // console.log(mvlist);
 
+    // 방법 1
+    // for (let i of mvlist) {
+    //     console.log(i)
+    //     for(let [k,v] of Object.entries(i)){
+    //         if(k === "rank" ||  k === "movieNm" || k === "audiCnt" || k === "audiChange" )
+    //         console.log(k,v)
+    //     }
+    // }
+
+    let klist = ['rank', 'movieNm', 'salesAmt', 'rankInten']
+
+
+    // 방법 2 
+    //     for(let item of mvlist){
+    //     console.log(item)
+    //     for(let [k,v] of Object.entries(item)){
+    //         if(klist.includes(k))
+    //         console.log(k,v)
+    //     }
+    // }
+
+
+    // 방법 3
+    // for(let item of mvlist){
+        
+        // for(let k of klist) {
+        //     console.log(k,item[k])
+        // }
+    // }
+
+
+    // 방법 4 추천 방법
+    // 이해가 안됨.. k/ map 함수?
+    
+    let divTags = [] ;
+    for(let item of mvlist) {
+        let temp = [];
+        // console.log(item)
+        temp = klist.map((k) => <span key={item.movieCd + k} className='col' id={`col${k}`}>{item[k]}</span>);
+        
+        divTags.push(<div key={item.movieCd} className="rowDiv">{temp}</div>);
+        console.log(divTags)
     }
 
-    let divTags = [];
-    for(let mv of mvlist){
-        // console.log(mv.rankm, mv.movieNm, mv.salesAmt, mv.rankInten); // Object 타입으로 찍힘 mv.으로 키 값에 접근 가능
-        let inten = '-';
-        if(mv.rankInten > 0 ){
-            inten = <span className="spup">{ "⏫  " + mv.rankInten}</span>;
-        } else if(mv.rankInten < 0){
-            inten = <span className="spdown">{'⏬  ' + -(mv.rankInten)}</span>;
-        }
 
-        divTags.push(
-
-        // key 값으로 구분되는데 movieCd 가 각각 유일한 값을 가짐 키 값이 없으면 오류발생
-        // 클릭할때 이벤트를 만들고 싶으면 온클릭에 mv변수를 보내는 콜백 함수형태로 보내주어야 함.
-            <div className="rowDiv" key={mv.movieCd} onClick={() => handleDivClick(mv)}>  
-            <span className="col" id="colrank">{mv.rank}</span>
-            <span className="col" id="colmovieNm">{mv.movieNm}</span>
-            <span className="col" id="colsalesAmt">{parseInt(mv.salesAmt).toLocaleString('ko-KR')}</span>
-            <span className="col" id="colrankInten">{inten}</span>
-            </div>);
-    }
-
-
-    return (// 바뀌는 부분 state 써야함
+    return (
         <div className="content">
-            <div className="rowDiv0" >
+            <div className="rowDiv">
                 <span className="col" id="colrank">순위</span>
                 <span className="col" id="colmovieNm">영화명</span>
                 <span className="col" id="colsalesAmt">매출액</span>
                 <span className="col" id="colrankInten">증감률</span>
             </div>
-            {divTags}<strong>
-            <div className="lowdata"> [{dspmv.movieNm }]개봉일 : {dspmv.openDt} 
-            
-             </div></strong>
-       
+            {divTags}
         </div>
-        );
+    //   {divTags}
+       );
 };
 export default Boxmain;

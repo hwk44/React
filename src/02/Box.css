@@ -2,7 +2,6 @@ h1 {
     /* color: brown; */
     /* font-size: 5vw; */
     font-size: 5vh;
-    
 }
 
 .bheader {
@@ -24,7 +23,7 @@ h1 {
     flex-direction: column;
 }
 
-.rowDiv {
+.rowDiv, .rowDiv0 {
    
     width: 60vw;
     height: 6vh;
@@ -34,6 +33,12 @@ h1 {
     /* background-color: bisque; */
     border-bottom: 1px solid gray;
 
+}
+.rowDiv:hover, .rowDiv:active {
+    background-color: bisque;
+}
+.rowDiv0{
+    background-color: rgba(127, 255, 212, 0.502);
 }
 
 .col {
@@ -62,4 +67,19 @@ h1 {
     width: 30%;
     /* background-color: blue; */
     /* height: 30px; */
+}
+.spup {
+    color: red;
+}
+.spdown {
+    color: blue;
+}
+.lowdata {
+    width: 60vw;
+    height: 4.5vh;
+    padding: 5px;
+    background-color: rgba(153, 92, 53, 0.704);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
