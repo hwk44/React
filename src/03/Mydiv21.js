@@ -1,8 +1,8 @@
-const Mydiv21 = (probs) => {
+const Mydiv21 = ({user, n ,setN}) => {
     return(
         <div className="mydiv21">
            <h3 className="divh3">Mydiv21</h3>
-           <p> {probs.user}</p>
+           <p> {user}</p>
         </div>
     );
 }

@@ -1,11 +1,9 @@
-
-
-const Frcdt = ({dt, setdt}) => { // 파라미터를 setDt인 함수를 속성값으로 보냄
+const Frcdt = ({fcrdt, setdt}) => { // 파라미터를 setDt인 함수를 속성값으로 보냄
     // console.log("dt",dt, setdt)
-    let dtdiv1Tag = [...dt];
-
+    let dtdiv1Tag = [...fcrdt];
     const show =(k) => {
-        // console.log("show", k)
+        console.log("show", k)
+        setdt(k);
     }
 
     dtdiv1Tag = dtdiv1Tag.map(  // 맵 함수로 div를 생성하는 함수를 만듬 아래 div className="box1"에서 함수사용

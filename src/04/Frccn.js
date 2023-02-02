@@ -1,8 +1,7 @@
-
-
-const Fcrcn = ({cn}) => {
+const Fcrcn = ({cn, dt}) => {
     // console.log("cn",cn)
     let infoArray =cn.split(",");
+    // console.log("info" , infoArray);
     // let seldt = 0;
 
     infoArray = infoArray.map((v)=>  
@@ -15,10 +14,10 @@ const Fcrcn = ({cn}) => {
             )
         </li> 
     );
+
     // console.log(infoArray); // 배열이다.
     // setInfo(infoArray);
     return (
-        
         <div className="box2">
                 <div className="detail">
                     <ul>{infoArray}</ul>

@@ -47,10 +47,8 @@ const Frcst = () => {
         fcrdt = fcrdt.map((k) => items[0][k]);
         fcrcn = fcrcn.map((k) => items[0][k]);
         
-        // console.log("dt = ", dt)
-        
-        // console.log(fcrdt) // key
-        // console.log(fcrcn) // value
+        // console.log("fcrdt = ", fcrdt) // key
+        // console.log("fcrcn = ", fcrcn) // value
         
         // 일자별 예보 오브젝트
         // for(let [k,v] of Object.entries(fcrdt))  // 오브젝트 엔트리
@@ -58,13 +56,14 @@ const Frcst = () => {
         //     console.log("k = ", k, "v = ", v , fcrcn[k] )
         // }
 
-        let sum = new Object();
+        // let sum = new Object();
+        let sum = {};
         for(let [k,v] of fcrdt.entries())  // 배열.엔트리
         {
             sum[v] = fcrcn[k]
             // console.log("k = ", k, "v = ", v, fcrcn[k])
         }
-        console.log("sum" ,sum)
+        // console.log("sum" ,sum)
         
         // let sum = new Object();
         // for(let i = 0; i < fcrcn.length; i++){
@@ -72,9 +71,6 @@ const Frcst = () => {
         // }
         // console.log(sum)
         
-
-
-
         /*내가 한 방법 .. 근데 날씨 정보가 순서대로 되지가 않음
         let fcrdt = []; // 날짜 정보만 담는 배열
         let fcrcn = []; // 나머지 정보를 담는 배열
@@ -96,24 +92,32 @@ const Frcst = () => {
         console.log(fcrcn);
         */
 
-        let [cn, setcn] = useState(sum["2023-02-02"]);
-        let [dt, setdt] = useState("2023-02-02");
+        let [cn, setcn] = useState(fcrcn[0]);
+        let [dt, setdt] = useState();
         // setcn();
 
 
-        // useEffect(() => {
-        //     console.log("userEffect" , sum[dt]);
-        //     sum[dt] && setcn(sum[dt])
-        // }, [dt]);
+        useEffect(() => {
+            // console.log("userEffect" , sum[dt]);
+           sum[dt] && setcn(sum[dt])
+        }, [dt]);
 
-        
+        // useEffect(() => {  // 처음 초기에 아무것도 없이 하려면?
+        //     setcn('')
+        //     return(
+        //         console.log("")
+        //     );
+        // }, []);
+
+
+        console.log(dt);
     return (
         <div> 
             <Frcheader />
-            <p>{dt}</p>
+            {/* <p>{dt}</p> */}
             <div className="main">
-                <Frcdt dt = {fcrdt} setdt = {setdt} /> 
-                <Frccn cn = {cn}/>
+                <Frcdt fcrdt = {fcrdt} setdt = {setdt} /> 
+                {dt && <Frccn cn = {cn} dt = {dt}/> }
             </div>
         </div>
          

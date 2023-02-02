@@ -8,9 +8,9 @@ const App = () => {
 
   return (
     
-      <Frcst />
+      // <Frcst />
       // <Box />
-      // <Mydiv />
+      <Mydiv />
     
   );
 }

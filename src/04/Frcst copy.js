@@ -34,13 +34,13 @@ const Frcst = () => {
         ];
         let item = items[0];
         
-        // state 변수다 값을 바꾸는 것이 함수(setInfo)
+        // info 는 state 변수다 값을 바꾸는 것이 함수(setInfo)
         let [info, setInfo] = useState();
       
         const showInfo1 = (seldt) => {
             
             let infoArray;
-            let newinfoArray;
+            // let newinfoArray;
             // setInfo(info);
             // console.log(seldt);
             // eslint-disable-next-line default-case
@@ -50,7 +50,7 @@ const Frcst = () => {
                 case 3: infoArray = item.frcstThreeCn.split(","); break;
                 case 4: infoArray = item.frcstFourCn.split(","); break;
             }
-            // console.log(infoArray); // 배열이다.
+            console.log(infoArray); // 배열이다.
             // infoArray = infoArray.map((ia)=> <li key={ia + seldt} className="lired">{ia}</li>);
             // infoArray = infoArray.map((v)=> v.includes("높음")?  // map 함수를 한줄만 써야 하므로 3항연산자 사용
             // <li key={v + seldt} className="lired">
