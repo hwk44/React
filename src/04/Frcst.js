@@ -117,7 +117,7 @@ const Frcst = () => {
             {/* <p>{dt}</p> */}
             <div className="main">
                 <Frcdt fcrdt = {fcrdt} setdt = {setdt} /> 
-                {dt && <Frccn cn = {cn} dt = {dt}/> }
+                {dt && <Frccn cn = {cn} dt = {dt}/> } 
             </div>
         </div>
          

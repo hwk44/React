@@ -1,0 +1,41 @@
+.content{
+    flex-direction: column;
+}
+.divheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(105, 67, 141);
+    color: white;
+}
+.divmain {
+    margin-left: 2.5vw;
+    margin-top: 10vh;
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    float: left;
+    border: solid 1px;
+    border-radius: 10px;
+}
+.divh2{
+    width: 100%;
+    background-color: rgba(11, 137, 137, 0.764);
+    /* border: solid; */
+    border-radius: 10px;
+    text-align: center;
+}
+.divbot {
+    margin-top: 15px;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid; */
+}
