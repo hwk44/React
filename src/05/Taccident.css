@@ -12,9 +12,10 @@
 }
 .divmain {
     margin-left: 2.5vw;
-    margin-top: 10vh;
-    width: 30vw;
-    height: 50vh;
+    margin-right: 2.5vw;
+    margin-top: 5vh;
+    width: 100%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: top;
@@ -32,10 +33,31 @@
 }
 .divbot {
     margin-top: 15px;
-    width: 90%;
+    width: 100%;
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     /* border: solid; */
+}
+.btc1, .btc2 
+{
+    width: 200px;
+    height: 5vh;
+}
+.tcard1, .tcardSel {
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid;
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+
+}
+.tcard1:hover, .tcard1:active, .tcardSel{
+    background-color: blueviolet;
+    color: aliceblue;
 }

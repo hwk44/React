@@ -146,30 +146,30 @@ const Taccident = () => {
         "totalCount": 15
       } ;
 
-      console.log(apiData)
+      // console.log(apiData)
       let c1, c2, data, temp ; 
       
-      for (let item in apiData) { // ??? 여기서는 왜 in을 쓰지?>
-        console.log("오브젝트 순회" , item)
-      }
-
-      for (let item in Object.va) { // ??? 여기서는 왜 in을 쓰지?>
-        console.log("오브젝트 순회" , item)
-      }
+      // for (let item in apiData) { // ??? 여기서는 왜 in을 쓰지?>
+        // console.log("오브젝트 순회" , item)
+      // }
      
       // data를 먼저 만듦
       data = apiData.data // 접근자 사용 Object.key
       // data = {apiData[1]} >> 이거는 오브젝트
-      console.log(data)
+      // console.log(data) // Array
       
       // c1 [대분류 4개]
-      c1 = data.map((k) => // k.사고유형_대분류 
+      c1 = data.map((k) => // 사고유형_대분류 
        k["사고유형_대분류"] )
-      // console.log(c1)
+      // console.log("c1" , c1)
+      // const make = (i) => {
+      //   <div>{c1[i]}</div>
+      // }
+
 
       c1 = new Set(c1) // 중복 제거  Set 을 통해서 {'차대사람', '차대차', '차량단독', '철길건널목'}
       c1 = [...c1] // Set을 다시 배열로 바꾸어야함
-      console.log(c1)
+      // console.log("c1",c1)
 
       // c2[대분류, 중분류] 강의내용
       c2 = [];
@@ -178,27 +178,20 @@ const Taccident = () => {
         temp.push(item.사고유형_대분류);
         temp.push(item.사고유형_중분류);
         c2.push(temp);
-        console.log("c2" , c2)
       }
+      // console.log("c2" , c2)
+      
       
 
-      // 내 방법 2개 배열을 만들고 하나의 오브젝트로 합치기
+      // 내 방법 2개 배열을 만들고 하나의 오브젝트로 합치기 reduce 함수를 써야 하는데 스킵..
       // temp = data.map((k) => k.사고유형_대분류);
       // c2 =  data.map((k) => k.사고유형_중분류);
       // c2 = temp.reduce()
-
-
-      
-    //  console.log("temp",temp)
-    //  console.log("c2",c2)
-      // for(let[k,v] of Object.entries(apiData)){
-      //   console.log([k,v])
-      //   c1 = map
-      // }
   
     return (
         <>
-          <Taccidentm  />
+          <Taccidentm c1={c1} c2={c2} data ={data}/>
+          
         </>
     ) ;
 }

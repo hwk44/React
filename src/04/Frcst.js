@@ -47,7 +47,7 @@ const Frcst = () => {
         fcrdt = fcrdt.map((k) => items[0][k]);
         fcrcn = fcrcn.map((k) => items[0][k]);
         
-        // console.log("fcrdt = ", fcrdt) // key
+        console.log("fcrdt = ", fcrdt) // key
         // console.log("fcrcn = ", fcrcn) // value
         
         // 일자별 예보 오브젝트
@@ -63,7 +63,7 @@ const Frcst = () => {
             sum[v] = fcrcn[k]
             // console.log("k = ", k, "v = ", v, fcrcn[k])
         }
-        // console.log("sum" ,sum)
+        console.log("sum" ,sum)
         
         // let sum = new Object();
         // for(let i = 0; i < fcrcn.length; i++){

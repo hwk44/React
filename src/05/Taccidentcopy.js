@@ -146,7 +146,8 @@ const Taccidentcopy = () => {
         "totalCount": 15
       } ;
 
-      console.log(apiData)
+      // console.log(apiData)
+
       // let c1, c2, data, temp ; 
       
       // for (let item in apiData) { // ??? 여기서는 왜 in을 쓰지?>
@@ -159,29 +160,28 @@ const Taccidentcopy = () => {
       
       let objk = Object.keys(apiData);
       let objv = Object.values(apiData);
-      // console.log("object 키 " , Object.keys(apiData));
-      // console.log("object 값 " , Object.values(apiData));
+      console.log("object 키 " , Object.keys(apiData)); // apiData의 키만 가져와서 배열 생성
+      console.log("object 값 " , Object.values(apiData)); // apiData의 값만 가져와서 배열 생성
 
       // 자바스크립트 오브젝트는 키와 값으로 분리 가능 => 배열
-      console.log("object 키 ", objk)
-      console.log("object 값 " , objv)
+      // console.log("object 키 ", objk)
+      // console.log("object 값 " , objv)
 
       // 배열의 map
-      let newv ;
-      newv = Object.keys(apiData).map((k) =>apiData[k]);
+      // let newv ;
+      // newv = Object.keys(apiData).map((k) =>apiData[k]); 
       // newv = objk.map((k) =>apiData[k]);
-
-      console.log("맵함수로 만든 배열",newv)
+      // console.log("맵함수로 만든 배열. objv 와 같은 값",newv)
 
       // 배열의 filter
       let data;
       data = objk.filter((k) => k == "data" );
       data = data.map((k) => apiData[k])  
-      console.log("filter로 data 추출" , data)
+      // console.log("filter로 data 추출" , data)
 
       // 오브젝트 키로 접근
       data = apiData.data
-      console.log("오브젝트 키로 data 추출1" , data)
+      // console.log("오브젝트 키로 data 추출1" , data)
       data = apiData['data']
       console.log("오브젝트 키로 data 추출2" , data)
 
@@ -194,8 +194,8 @@ const Taccidentcopy = () => {
       console.log("대분류 추출 3단계 배열로 복귀",c1)
 
       // 중분류
-      let c3 = data.map((k) => (k.사고유형_대분류+","+k.사고유형_중분류).split(","));
-      console.log("대분류,중분류 추출1" ,c3)
+      // let c3 = data.map((k) => (k.사고유형_대분류+","+k.사고유형_중분류).split(","));
+      // console.log("대분류,중분류 추출1" ,c3)
 
       // let c2 = data.map((k) =>
       //  (k.사고유형_대분류+","+k.사고유형_중분류 ).split(",") );
@@ -204,16 +204,16 @@ const Taccidentcopy = () => {
       // let c2 = data.map((k) => [k.사고유형_대분류, k.사고유형_중분류])
       //  console.log("대분류,중분류 추출2" ,c2)
 
-       // 배열의 entries
+      //  배열의 entries
       //  for(let [k,v] of c2.entries()) {
       //   console.log(k , v)
       //  }
 
        // 배열
        let c11 = data.map((k) => k.사고유형_대분류);
-       console.log("c11 = data.map" + c11)
+       console.log("c11 = data.map " + c11)
        let c12 = data.map((k) => k.사고유형_중분류);
-       console.log(c12)
+       console.log("c12 = data.map",c12)
 
        // c11이 키가 되고, c12가 밸류가 되게 해야함
        let cobj = {};
@@ -229,9 +229,12 @@ const Taccidentcopy = () => {
        // 대분류 마다 중분류가 나열되는 배열의 오브젝트 만들기
       
 
+
+
+
     return (
         <>
-          <Taccidentm  />
+          {/* <Taccidentm  /> */}
         </>
     ) ;
 }
