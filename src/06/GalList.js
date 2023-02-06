@@ -7,7 +7,7 @@ const GalList = ({filti, sellist,  setSellist}) => {
     }
 
     filti = filti.map((k) => 
-    <div key={k} className="listli" onClick={() =>showimg(k)}>{k}</div>
+    <div key={k} className={k === sellist ? "listlisel" :"listli"} onClick={() =>showimg(k)}>{k}</div>
     )
 
     return(

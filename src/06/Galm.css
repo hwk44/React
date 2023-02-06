@@ -35,7 +35,7 @@
     border: 1px solid;
     /* margin-top: 15vh; */
 }
-.listli {
+.listli, .listlisel {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +45,10 @@
     border: 1px solid;
     border-radius: 10px;
 }
+.listlisel{
+    background-color: rgba(0, 0, 255, 0.446);
+}
+
 .listli:hover, listli:active{
     background-color: rgba(0, 0, 255, 0.446);
 }
