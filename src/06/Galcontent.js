@@ -1,8 +1,8 @@
 
-const Galcontent = ({ arri, sellist, selpic, setSellist }) => {
+const Galcontent = ({ arri, sellist, selpic}) => {
 
     // let human, location, date;
-    let temp = [];
+   
     
     // console.log("arri의 엔트리",Object.entries(arri))
 
@@ -15,15 +15,16 @@ const Galcontent = ({ arri, sellist, selpic, setSellist }) => {
     // console.log("arri의 밸류들",Object.values(arri))
     
     
-    // selpic = <img src={selpic} />
-    temp.push(<img src={selpic} />)
-    temp.push(arri.map((k) => (k.galWebImageUrl==selpic)? k.galSearchKeyword : ""))
+    
+    let temp = [];
+    temp.push(<img src={selpic} alt=""/>)
+    temp.push(arri.map((k) => (k.galWebImageUrl===selpic)? k.galSearchKeyword : ""))
     for(let k of Object.values(arri)) {
         console.log("value",k)
-        if(k.galTitle == sellist) {
+        if(k.galTitle === sellist) {
             temp.push(k.galPhotographyLocation)
             temp.push(k.galPhotographer)
-            temp.push(k.galCreatedtime.slice(0,6));
+            temp.push(k.galPhotographyMonth);
         }
     }
 

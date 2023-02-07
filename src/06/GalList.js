@@ -7,9 +7,9 @@ const GalList = ({filti, sellist,  setSellist}) => {
     }
 
     filti = filti.map((k) => 
-    <div key={k} className={k === sellist ? "listlisel" :"listli"} onClick={() =>showimg(k)}>{k}</div>
+    <div key={k}  className={k === sellist ? "listlisel" :"listli"}  onClick={() =>showimg(k)}>{k}</div>
     )
-
+//{style: "cursor: pointer"}
     return(
         <div className="divlist">
             {/* <h1>항목</h1> */}
