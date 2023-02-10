@@ -11,7 +11,7 @@ import Galselect from './06/GalSelelct';
 import Mycom from './07/Mycom';
 import MyForm from './08/MyForm';
 import RouterMain from './09/RouterMain';
-
+import Wmain from './10/Wmain'
 import { BrowserRouter } from 'react-router-dom';
 const App = () => {
 
@@ -28,7 +28,8 @@ const App = () => {
     // <Mycom />
     // <MyForm />
     <BrowserRouter>
-      <RouterMain />
+      {/* //   <RouterMain /> */}
+      <Wmain />
     </BrowserRouter>
 
   );

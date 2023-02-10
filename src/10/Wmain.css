@@ -1,0 +1,46 @@
+.wh{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.76);
+    color: white;
+    
+}
+.whbt {
+    display: flex;
+    justify-content: left;
+    /* align-items: right; */
+    margin: 3vw;
+}
+.bthome {
+    width: 140px;
+    height: 80px;
+    font-size: 25px;
+}
+.divul{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+}
+.ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: 60%;
+    /* height: 50%; */
+}
+.ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 30%;
+    height: 20%;
+    border: 1px solid;
+}
