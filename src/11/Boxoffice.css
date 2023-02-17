@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.mvh {
+    background-color: rgb(94, 94, 205);
+    color: white;
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.mvh > h1, .mvh > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+}
+.mvh > h1 {
+    width: 70%;
+    align-items: center;
+}
+.mvh > form {
+    width: 30%;
+    align-items: left;
+    margin-right: 0px;
+}
+.mvh input {
+    width: 70%;
+    text-align: center;
+    /* box-sizing: border-box; */
+}
+
+.mvmain{
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: row;
+}
+.divlist{
+    /* border: 1px solid; */
+    
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.divlist1{
+    background-color: rgba(63, 38, 206, 0.645);
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid;
+
+    height: 8;
+    width: 57%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.divlist2{
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid; */
+    height: 90%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* align-items: center; */
+}
+.divcont :hover, .divcont:active {
+    background-color: rgb(38, 191, 148);
+}
+.divcont{
+    /* border: 1px solid; */
+    border-bottom: 1px solid gray;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: top; */
+    /* text-align: center; */
+    height: 10%;
+    width: 100%;
+}
+.sp0, .sp1, .sp2 {
+    /* padding: auto; */
+    display: inline-flex;
+    height: 100%;
+    align-items: left;
+    text-align: bottom; 
+} 
+.sp0{
+    width: 20%;
+    /* padding-left: 2px; */
+}
+
+.sp1{width: 65%;}
+
+.sp2{width: 15%;}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    width: 40%;
+    height: 25vh;
+    margin-top: 20vh;
+    margin-right: 10%;
+    background-color: rgba(198, 191, 150, 0.168);
+    
+}
+.divdetail{
+    height: 20%;
+    color: black;
+}

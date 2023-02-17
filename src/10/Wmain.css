@@ -44,3 +44,30 @@
     height: 20%;
     border: 1px solid;
 }
+.outw1div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.w1div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    
+    /* width: 10vw; */
+    height: 5vh;
+    width: 60%;
+
+    border-bottom: 1px solid gray;
+}
+
+ .sp0, .sp1, .sp2 {
+    display: inline-flex;
+    height: 100%;
+    /* align-items: left; */
+    /* text-align: bottom; */
+    /* /* width: 30%;  */
+} 

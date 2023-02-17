@@ -1,4 +1,3 @@
-// import './App.css';
 
 import Box from './02/Box';
 import Mydiv from './03/Mydiv';
@@ -13,6 +12,8 @@ import MyForm from './08/MyForm';
 import RouterMain from './09/RouterMain';
 import Wmain from './10/Wmain'
 import { BrowserRouter } from 'react-router-dom';
+import Async from './11/Async';
+import Boxoffice from './11/Boxoffice';
 const App = () => {
 
   return (
@@ -27,11 +28,13 @@ const App = () => {
     // <Galselect />
     // <Mycom />
     // <MyForm />
-    <BrowserRouter>
-      {/* //   <RouterMain /> */}
-      <Wmain />
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   {/* //   <RouterMain /> */}
+    //   <Wmain />
+    // </BrowserRouter>
 
+    // <Async />
+    <Boxoffice />
   );
 }
 
