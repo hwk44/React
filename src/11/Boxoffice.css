@@ -52,7 +52,7 @@
     
 }
 .divlist1{
-    background-color: rgba(63, 38, 206, 0.645);
+    background-color: rgba(142, 156, 206, 0.645);
     color: rgb(0, 0, 0);
     margin-top: 10px;
     margin-bottom: 5px;
@@ -78,7 +78,7 @@
     /* align-items: center; */
 }
 .divcont :hover, .divcont:active {
-    background-color: rgb(38, 191, 148);
+    background-color: rgba(142, 156, 206, 0.645);
 }
 .divcont{
     /* border: 1px solid; */
