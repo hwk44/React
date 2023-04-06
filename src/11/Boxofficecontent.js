@@ -12,7 +12,7 @@ useEffect(() => {
     .then((data) => {
     const movieinfo = data.movieInfoResult.movieInfo
     console.log(movieinfo)
-    let temp = [];
+    let temp = [];                                                                    
     temp.push("영화명 : " + movieinfo.movieNm);
     temp.push("개봉일 : " +movieinfo.openDt);
     temp.push("제작상태 : "+movieinfo.prdtStatNm);
