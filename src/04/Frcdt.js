@@ -1,6 +1,6 @@
-const Frcdt = ({fcrdt, setdt}) => { // 파라미터를 setDt인 함수를 속성값으로 보냄
+const Frcdt = ({frcdt, setdt}) => { // 파라미터를 setDt인 함수를 속성값으로 보냄
     // console.log("dt",dt, setdt)
-    let dtdiv1Tag = [...fcrdt];
+    let dtdiv1Tag = [...frcdt];
     const show =(k) => {
         console.log("show", k)
         setdt(k);

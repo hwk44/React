@@ -39,28 +39,28 @@ const Frcst = () => {
         ];
         // console.log("아이템1",items[0]["frcstFourDt"])
 
-        let fcrdt = [ "frcstOneDt","frcstTwoDt","frcstThreeDt", "frcstFourDt"]; // 날짜 정보만 담는 배열
-        let fcrcn = ["frcstOneCn","frcstTwoCn", "frcstThreeCn",  "frcstFourCn"]; // 예보 정보를 담는 배열
+        let frcdt = [ "frcstOneDt","frcstTwoDt","frcstThreeDt", "frcstFourDt"]; // 날짜 정보만 담는 배열
+        let frccn = ["frcstOneCn","frcstTwoCn", "frcstThreeCn",  "frcstFourCn"]; // 예보 정보를 담는 배열
 
         // 예보 일자별 배열 추출
         // let dt = fcrdt.map((v) => v.includes('One')? 1 :0);
-        fcrdt = fcrdt.map((k) => items[0][k]);
-        fcrcn = fcrcn.map((k) => items[0][k]);
+        frcdt = frcdt.map((k) => items[0][k]);
+        frccn = frccn.map((k) => items[0][k]);
         
-        console.log("fcrdt = ", fcrdt) // key
-        // console.log("fcrcn = ", fcrcn) // value
+        console.log("frcdt = ", frcdt) // key
+        // console.log("frccn = ", frccn) // value
         
         // 일자별 예보 오브젝트
-        // for(let [k,v] of Object.entries(fcrdt))  // 오브젝트 엔트리
+        // for(let [k,v] of Object.entries(frcdt))  // 오브젝트 엔트리
         // {
-        //     console.log("k = ", k, "v = ", v , fcrcn[k] )
+        //     console.log("k = ", k, "v = ", v , frccn[k] )
         // }
 
         // let sum = new Object();
         let sum = {};
-        for(let [k,v] of fcrdt.entries())  // 배열.엔트리
+        for(let [k,v] of frcdt.entries())  // 배열.엔트리
         {
-            sum[v] = fcrcn[k]
+            sum[v] = frccn[k]
             // console.log("k = ", k, "v = ", v, fcrcn[k])
         }
         console.log("sum" ,sum)
@@ -92,7 +92,7 @@ const Frcst = () => {
         console.log(fcrcn);
         */
 
-        let [cn, setcn] = useState(fcrcn[0]);
+        let [cn, setcn] = useState(frccn[0]);
         let [dt, setdt] = useState();
         // setcn();
 
@@ -116,7 +116,7 @@ const Frcst = () => {
             <Frcheader />
             {/* <p>{dt}</p> */}
             <div className="main">
-                <Frcdt fcrdt = {fcrdt} setdt = {setdt} /> 
+                <Frcdt frcdt = {frcdt} setdt = {setdt} /> 
                 {dt && <Frccn cn = {cn} dt = {dt}/> } 
             </div>
         </div>

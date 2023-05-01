@@ -7,8 +7,8 @@ const Box = () => {
     return (
       <div>
         <Boxheader />
-        <Boxmain / >
+        <Boxmain />
       </div>  
     );
-};
+}
 export default Box;
